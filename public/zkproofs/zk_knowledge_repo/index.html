@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> Directory of Zero Knowledge Definitions, Notions, Tools</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		Directory of Zero Knowledge Definitions, Notions, Tools
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<p> </p>
+	<h1 id="introduction">Introduction</h1>
+<p>It&rsquo;s very difficult to keep track of all the various notions related to zero knowledge. Indeed there are many, making zero knowledge an extremely
+nuanced topic and its academic literature difficult to navigate. There are canonical definitions that are commonplace, but developing an intuition for
+more esoteric notions can be difficult. The goal of this page is to collect these various definitions under common notation in order to systematically
+build intuition for what concepts these definitions aim to capture and how they are connected.</p>
+<h1 id="fundamental-building-blocks">Fundamental Building Blocks</h1>
+<p><strong>Def Interactive Argument of Knowledge:</strong> $\mathsf{ARG} = (\bm{G}, \bm{P}, \bm{V})$ denotes an <em>interactive argument</em> of knowledge for relation
+$\mathcal{R}$. The goal of $\mathsf{ARG}$ is for $\bm{P}$ to prove to $\bm{V}$ that he knows a witness $w$ with respect to statement $x$ that
+satisfies $\mathcal{R}$. Following the setup algorithm $\bm{G}$, $\bm{P}$ and $\bm{V}$ will exchange messages until eventually $\bm{V}$ will either
+accept or reject $\bm{P}$&rsquo;s claim of knowledge.</p>
+<p><strong>Interactive Proof (IP)</strong>.</p>
+<p><strong>Probabilistically Checkable Proof (PCP)</strong>.</p>
+<p><strong>Interactive Oracle Proof (IOP)</strong>.</p>
+<p><strong>Interactive Oracle Proof of Proximity (IOPP)</strong>. Essentiall a low-degree test for RS relation.</p>
+<p><strong>Reed-Solomon Encoded IOP (RS-IOP)</strong>.</p>
+<p><strong>Tensor IOP</strong>. An IOP where the verifier can make tensor queries to the proof strings sent by the prover, as oppsed to just point queries as in a
+standard IOP. The verifier specifies a vector with a prescribed tensor structure and receives as answer the ineer product of the tensor vector and
+proof string. Tensor IOPs are paramaterized by $(\mathbb{F}, k, t)$, which describes the tensor query structure.</p>
+<h2 id="the-basic-properties">The Basic Properties</h2>
+<ol>
+<li>Completeness</li>
+<li>Soundness</li>
+<li>Zero Knowledge (full zero-knowledge)</li>
+<li>Public Coin</li>
+</ol>
+<h2 id="variations">Variations</h2>
+<ol>
+<li>$n$-Special Soundness</li>
+<li>Statistical Zero Knowedge</li>
+<li>Computational Soundness</li>
+<li>Knowledge Soundness</li>
+<li>Honest Verifier Zero-Knowledge</li>
+<li>Perfect Special Honest-Verifier Zero-Knowledge</li>
+<li>Witness-Extended Emulation</li>
+<li>Computational Witness-Extended Emulation</li>
+</ol>
+<h2 id="tools-of-the-trade">Tools of the Trade</h2>
+<ol>
+<li>Simulation-Extractable</li>
+<li>Transcript Trees</li>
+<li>Knowledge-Extractor</li>
+<li><strong>Multi-Proof Online Extractability</strong>: Extractor does not need to rewinda malicious prover and instead, only needs a list of Random Oracle queries
+made by the adversary and the proof to extract a satisfying witness.</li>
+<li>Simulators vs Extractors vs Emulators</li>
+<li>Forking Lemma</li>
+<li>The Fiat-Shamir Heuristic</li>
+</ol>
+<h2 id="some-building-blocks">Some Building Blocks</h2>
+<ol>
+<li>Interactive Argument of Knowledge</li>
+<li>Succinct Non-Interactive Argument (SNARG)</li>
+<li>Succinct Non-Interactive Argument of Knowledge (SNARK)</li>
+<li>Designated Verifier SNARK</li>
+</ol>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

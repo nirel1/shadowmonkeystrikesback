@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on ShadowMonkey</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on ShadowMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Sumcheck</title>
+      <link>http://localhost:1313/zkproofs/on_sumcheck_arguments/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_sumcheck_arguments/</guid>
+      <description>Outline Motivation What does the sumcheck protocol do? Detailed multivariate sumcheck protocol Discussion of polynomial descriptions Discussion of $\mathsf{check}_{2}$&amp;rsquo;s seeming redundancy Discussion of $\mathsf{check}_{3}$ Analysis of multivariate sumcheck protocol Prover complexity (time, space, communication) Verifier complexity (time, space, communication) Security (completeness, soundness) How to get from an R1CS instance to a Sumcheck Instance How does sumcheck figure into zero knowledge proof systems Matrices to functions Functions to ML polynomials Query reduction to get sumcheck instance</description>
+    </item>
+    <item>
+      <title>101 Tangential Topics</title>
+      <link>http://localhost:1313/cryptocave/blockchain_101_tangential/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_101_tangential/</guid>
+      <description>Tangential Topics Peer-to-Peer In order to avoid centralization, Bitcoin uses a peer-to-peer architecture. Unlike in a client-server architecture, nodes in this network act both as a server that can download files and as a client that can process data and message other nodes. This does not mean that the nodes must be identical, but only that there is no hierarchy among them.&#xA;Nodes In Bitcoin there are three types of nodes: full nodes, mining nodes, and light nodes.</description>
+    </item>
+    <item>
+      <title>A Taxonomy of Arguments</title>
+      <link>http://localhost:1313/zkproofs/proof_types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/proof_types/</guid>
+      <description>Primary range proofs: Prove that witness $x$ is in a given range $[\alpha, \beta]$. lookup proof: Given table $T$, prove that witness $x\in T$. copy proof: permutation proof: Secondary linear interactive proofs Groth16: non-interactive linear proof (NILP) $\rightarrow$ split NILP $\rightarrow$ disclosure free NILP Renamed from 2-move algebraic input-oblivious linear interactive proof Non-interactive proof for relation generator $\mathcal{R}$ if it has perfect completeness and statistical knowledge soundness against affine prover strategies.</description>
+    </item>
+    <item>
+      <title>Algebraic Facts</title>
+      <link>http://localhost:1313/mathnotes/algebraic_definitions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mathnotes/algebraic_definitions/</guid>
+      <description>Guide Definitions Def Group. A group is a set along with an associative (also sometimes called &amp;ldquo;binary&amp;rdquo;) operation. Usually, this operation is referred to as addition. Formally, a group is denoted $G = (G, +)$. $G$ contains an &amp;ldquo;identity&amp;rdquo; element, referred to as $0_{G}$. Finally, all elements of $G$ have inverses.&#xA;Def Ring. A ring is a set along with two operations, usually referred to as addition $(+)$ and multiplication $(\times)$.</description>
+    </item>
+    <item>
+      <title>Blockchain 101</title>
+      <link>http://localhost:1313/cryptocave/blockchain_101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_101/</guid>
+      <description>Problem I want to send money over the internet but I don&amp;rsquo;t trust financial intermediaries.&#xA;Solution Instead of giving a financial intermediary control over the recordbook, distribute the recordbook across a network of participants.&#xA;Naive Approach How does one distribute a recordbook across a network of participants? Well, not unlike the internet itself, we can create a network of nodes (participants) that can transmit messages to one another. Each participant in the network can can store its own version of the recordbook.</description>
+    </item>
+    <item>
+      <title>Blockchain 102 (Consensus)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_102/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_102/</guid>
+      <description>Problem I want to send money over the internet using a distributed network but I don&amp;rsquo;t trust malicious nodes.&#xA;Solution Combine consensus protocols to create a Byzantine Fault Tolerant consensus mechanism.&#xA;Consensus can probably delete this paragraph In order to add to the ledger, transactions undergo a process to check that they’re legitimate. But, it’d be inefficient to try to process every transaction one-by-one; instead, the transactions are bundled together into blocks.</description>
+    </item>
+    <item>
+      <title>Blockchain 103 (Bridges)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_103/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_103/</guid>
+      <description>Problem I want to send money from one blockchain to another but I don&amp;rsquo;t trust financial intermediaries.&#xA;Solution Create a trust-minimized way for blockchains to interact.&#xA;Context A blockchain is designed to account for all possible state conditions - the combination of accounts, transactions, data, etc.. It is not designed to interpret information from other systems, the same way a store isn&amp;rsquo;t designed to accept gift cards from other stores.</description>
+    </item>
+    <item>
+      <title>Blockchain 104 (State Machines)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_104/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_104/</guid>
+      <description>Problem The distributed network of machines that I use is limited to sending financial transactions. I want to perform other actions with minimized trust.&#xA;Solution virtual machine&#xA;State Machines The modern concept of a blockchain is to exist as a globally replicated state machine. What this means is blockchains have been designed to run as a single machine where every user action (transaction) is interpreted relative to the state. The term ‘virtual machine (VM)’ refers to running this machine inside another, the same way one could run the Mac OS on a Windows computer using a VM.</description>
+    </item>
+    <item>
+      <title>Blockchain 105 (dApps)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_105/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_105/</guid>
+      <description>Problem I can write smart contracts to create trustless applications but the user experience (UX) is insufficient for mainstream adoption.&#xA;Solution dApps&#xA;Tokens https://kydo.substack.com/p/decentralization-in-dapps-vs-l1</description>
+    </item>
+    <item>
+      <title>Blockchain 106 (Oracles)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_106/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_106/</guid>
+      <description>Problem I can create decentralized applications but there is no way for them to interact with real-world data.&#xA;Solution Oracles</description>
+    </item>
+    <item>
+      <title>Blockchain 107 (Sovereign Chains)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_107/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_107/</guid>
+      <description>Problem I can&amp;rsquo;t build my own decentralized network without designing a blockchain from scratch.&#xA;Solution cosmos-sdk, polkadot, avalanche: Design a blockchain with custom consensus, validators, token / staking / inflation, custom rules, gas fees, rules built into the chain instead of smart contracts, custom execution environment / devx for developers</description>
+    </item>
+    <item>
+      <title>Blockchain 108 (Rollups)</title>
+      <link>http://localhost:1313/cryptocave/blockchain_108/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_108/</guid>
+      <description>Problem Gas is expensive on Ethereum. or I want more control over my application but I still want to rely on Ethereum security.&#xA;Solution Rollups - very unfinished&#xA;Context Rollups are a clever workaround to circumvent the high gas costs of transacting on Ethereum. By compressing many transactions into calldata, a rollup can effectively run hundreds of transactions on Ethereum for the price of one. To do this, however, requires another layer (a Layer 2) where these transactions are derived to.</description>
+    </item>
+    <item>
+      <title>Blockchain Preface</title>
+      <link>http://localhost:1313/cryptocave/blockchain_0_preface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/blockchain_0_preface/</guid>
+      <description>The set of articles that follow provide a foundation for understanding the world of blockchains and cryptocurrencies in the most concise, correct format I could procure. They are geared towards technical readers with little to no context of this world, but I still find them useful even as a reader with a lot of context. I refer to these articles often when elaborating on the incredible applications of ZK in the ZKWorld section.</description>
+    </item>
+    <item>
+      <title>Cheating Single Slot Finality</title>
+      <link>http://localhost:1313/cryptocave/cheating_single_slot_finality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/cheating_single_slot_finality/</guid>
+      <description>A catchy phrase that gets thrown around is ‘single slot finality’. If you’re not familiar, here are two links ordered by complexity, and an example protocol to go along: https://ethereum.org/en/roadmap/single-slot-finality/ https://notes.ethereum.org/@vbuterin/single_slot_finality https://ethresear.ch/t/a-simple-single-slot-finality-protocol/14920&#xA;The idea here being that on Ethereum we want a user’s transaction to be considered final as soon as the slot that their transaction is included in is complete. Each slot is 12 seconds. 32 slots make up an epoch, which is justified after 2/3rds of validators vote correctly on its chain head.</description>
+    </item>
+    <item>
+      <title>Collection of Cryptographic Assumptions</title>
+      <link>http://localhost:1313/cryptocave/crypto_assumptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/crypto_assumptions/</guid>
+      <description>Introduction There are too many assumptions to keep track of. I keep forgetting which assumption comes from where and is applicable in what context. Cryptography is notoriously difficult to keep up with because new assumptions are constantly being proposed in order to gain more and more functionality. The goal of this page is to keep track of various assumptions as and when I read about them. They can then be referenced in the future with some clarity.</description>
+    </item>
+    <item>
+      <title>Directory of Cryptographic Objects</title>
+      <link>http://localhost:1313/cryptocave/crypto_objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/crypto_objects/</guid>
+      <description>Guide The other pain point I have found while attempting to study cryptography is that there is a vast ocean of cryptographic objects and that they are all useful for different contexts, can be constructed from different assumptions, andoffer different security guarantees. I will attempt here to keep a working directory of cryptographic objects. Where possible, I will provide an overview of their construction and an intuition for their security/efficiency guarantees.</description>
+    </item>
+    <item>
+      <title>Directory of Zero Knowledge Definitions, Notions, Tools</title>
+      <link>http://localhost:1313/zkproofs/zk_knowledge_repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/zk_knowledge_repo/</guid>
+      <description>Introduction It&amp;rsquo;s very difficult to keep track of all the various notions related to zero knowledge. Indeed there are many, making zero knowledge an extremely nuanced topic and its academic literature difficult to navigate. There are canonical definitions that are commonplace, but developing an intuition for more esoteric notions can be difficult. The goal of this page is to collect these various definitions under common notation in order to systematically build intuition for what concepts these definitions aim to capture and how they are connected.</description>
+    </item>
+    <item>
+      <title>Elliptic Curves Part 1</title>
+      <link>http://localhost:1313/cryptocave/elliptic_curves/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/elliptic_curves/</guid>
+      <description>Introduction This will be a running place to try and understand elliptic curves. I don&amp;rsquo;t have a cohesive picture, but will try and keep some random notes here until I can compile them into something tangible.&#xA;Hasse&amp;rsquo;s Theorem Frobenius Endomorphism Legendre Symbol Jacobi Sums Schoof&amp;rsquo;s Algorithm Supersingular Curves Resources Elliptic Curves Over Finite Fields Ben Lynn Notes Schoof&amp;rsquo;s Algorithm </description>
+    </item>
+    <item>
+      <title>FFT Overview</title>
+      <link>http://localhost:1313/cryptocave/fft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/fft/</guid>
+      <description>Why We Care About FFTs &amp;ldquo;FFTs require linear space-complexity for the prover, and prevent the prover from being implemented in logarithmic space as in the sumcheck protocol or other succinct arguments based on folding protocols. In contrast, we reduce $\mathsf{NP}$ statements to bilinear relations such as scalar-product relations, and then rely on succinct arguments for scalar products; this reduction can be performed via a linear number of cryptographic operations, and without relying on FFTs.</description>
+    </item>
+    <item>
+      <title>FRI Protocol and Its Applications</title>
+      <link>http://localhost:1313/zkproofs/on_fri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_fri/</guid>
+      <description>Background Reed Solomon Codes FFT and Smooth Multiplicative Subgroups Low-Degree Tests Interactive Oracle Proofs Fast Reed Solomon Interactive Oracle Proofs of Proximity (FRI) FRI $\longrightarrow$ Polynomial Commitment Batched FRI References Fiat Shamir Security of FRI </description>
+    </item>
+    <item>
+      <title>Heterogeneous Utility Belt</title>
+      <link>http://localhost:1313/mathnotes/useful_thoerems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mathnotes/useful_thoerems/</guid>
+      <description>Introduction Here is a collection of theorems and concepts that are useful. They will roughly be sorted by subject. I will attempt to give explanations or examples of why they are useful, at least in the contexts that I&amp;rsquo;ve encountered them. Some will be incredibly basic, while others will be slightly more invovled.&#xA;Number Theory Fermat&amp;rsquo;s Little Theorem. Let $p$ be a prime. Then $\forall a \in \mathbb{Z}$, $a^{p} \equiv a \pmod{p}$.</description>
+    </item>
+    <item>
+      <title>Implementing Finite Fields</title>
+      <link>http://localhost:1313/cryptocave/ff_implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/ff_implementation/</guid>
+      <description>Motivation implementing algebraic settings is incredibly important for cryptography. in particular, it is important to ensure fast operations in these settings. getting familiar with these operations and what algorithms are available for them in the context of digital architectures is useful. this is my first attempt at implementing a finite field. i&amp;rsquo;m hoping to keep notes here that document what i learn along the way.&#xA;incremental notes Reduction Algorithms or How to Choose a Modulus Modular multiplication can be done in the standard way.</description>
+    </item>
+    <item>
+      <title>Introduction to Proof Economics</title>
+      <link>http://localhost:1313/zkworld/proof_economics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/proof_economics/</guid>
+      <description>Where Are Proofs In Economic Taxonomy? Potential Claim: Proofs are a fundamentally new form of economic object. If so, then we will need some new ideas in order to model their behavior.&#xA;Individual Decision Making in Games of Incremental Certainty Knowledge assumptions are essential in most game theoretic models. However, here the emphasis is usually placed on modelling behavior in the context of various types of uncertainty. A player&amp;rsquo;s utitlity function is thereby optimized with respect to a distribution of outcomes dependent on this uncertainty.</description>
+    </item>
+    <item>
+      <title>Lookup Arguments</title>
+      <link>http://localhost:1313/zkproofs/on_lookup_arguments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_lookup_arguments/</guid>
+      <description>What are Lookup Arguments Good For The main goal of a lookup argument is to prove that a particular value $x$ is contained in a given table $T$. Lookup tables are useful for a number of reasons, but should be principly thought of as a way to express high-degree algebraic functions.&#xA;Arya and the Lookup Proposal To enable decomposition proofs into odd and even-position bits, we develop a new lookup proof that makes it possible to check that a field element belongs to a table of permitted values.</description>
+    </item>
+    <item>
+      <title>Multiscalar Multiplication (MSM)</title>
+      <link>http://localhost:1313/cryptocave/msm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/msm/</guid>
+      <description>Goal Useful treatment is given in Bootle&amp;rsquo;s Notes.&#xA;Pippenger&amp;rsquo;s Algorithms Pippenger&amp;rsquo;s Variants Hardward Acceleration </description>
+    </item>
+    <item>
+      <title>notes1</title>
+      <link>http://localhost:1313/cryptocave/notes1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes1/</guid>
+      <description>Note 1 - EVM&#xA;Trust + stickiness&#xA;Why the EVM sticks&#xA;In blockchains people talk a lot about trust, and especially about minimizing trust. Truthfully, trust can only migrate, and it is a subjective measure. Many of us in the space happen to believe that humans are often the least trustworthy part of a system, and by minimizing their involvement we maximize the trustworthiness of the system (all other things equal).</description>
+    </item>
+    <item>
+      <title>notes1</title>
+      <link>http://localhost:1313/cryptocave/notes2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes2/</guid>
+      <description>Note 2 - more direct economic security&#xA;In Bitcoin, the cost to mine a block maps to the cost of electricity. The price of Bitcoin isn’t really correlated to electricity costs, which means that the cost to mine a block has very little to do with the value of that block.&#xA;Ethereum, start with 32 stake and protocol can upgrade (as have been proposed) to adjust in the future&#xA;In Ethereum, the cost to attack the network is based on the staking and slashing rates.</description>
+    </item>
+    <item>
+      <title>notes3</title>
+      <link>http://localhost:1313/cryptocave/notes3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes3/</guid>
+      <description>Note 3 - enshrine&#xA;Many rollups discuss the concept of enshrining logic. The idea is that if rules are baked into the protocol, the rollup benefits from better safety guarantees. Some of the tradeoffs are discussed here: https://ethresear.ch/t/why-enshrine-proposer-builder-separation-a-viable-path-to-epbs/15710&#xA;In the context of a proving marketplace, this idea has also been discussed (https://discourse.aztec.network/t/ideas-on-a-proving-network/724/3 ) . Here, it seems like the minimal requirement for a rollup is to ‘enshrine’ a delegation mechanism - we interpret this to mean that a method to request proofs from a 3rd party is baked into the protocol.</description>
+    </item>
+    <item>
+      <title>notes4</title>
+      <link>http://localhost:1313/cryptocave/notes4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes4/</guid>
+      <description>Note 4 - Shared Sequencers&#xA;At SBC this year, there was a lot of interesting discussion about shared sequencers. Because the idea of rollups is relatively untested, there are still a lot of experimental formats for attempting to decentralize rollups such that they resemble Ethereum. On Ethereum, anyone can post a transaction request to the public mempool - this results in communication overhead to network this mempool of pending transaction requests to one another.</description>
+    </item>
+    <item>
+      <title>notes5</title>
+      <link>http://localhost:1313/cryptocave/notes5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes5/</guid>
+      <description>Note 5 - on-chain proofs&#xA;Smart contracts have inherently been a dream of fairness and automation (it’s in the name), with the promise of executing agreements without any human involvement. As it turns out, this isn’t always useful - a lot of agreements rely on information that is not (yet) stored on blockchains. The growth of proofs being verified on-chain will be a cool test of whether this concept can be challenged while minimizing trust on other humans.</description>
+    </item>
+    <item>
+      <title>notes6</title>
+      <link>http://localhost:1313/cryptocave/notes6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/notes6/</guid>
+      <description>Note 6 - Off-chain incentivization (with crypto economic security)&#xA;It seems that incentivizing off-chain activity has been a topic of discussion. Eigenlayer brought more attention to the value of crypto economic security, building a framework for others to design slashing conditions. Cowswap was able to design a mechanism where solvers operate from an off-chain orderbook to match ‘coincidence of wants’ that relies on slashing, so that solvers stake and they can be economically enforced to act correctly.</description>
+    </item>
+    <item>
+      <title>On Cryptographic Security Models</title>
+      <link>http://localhost:1313/cryptocave/on_security_models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/on_security_models/</guid>
+      <description>Random Oracle Model (ROM) Models cryptographic hash functions as random oracles.&#xA;Random Beacons vs Random Oracles The difference between random beacons and the much more well-known random oracles, is that their values are not available until certain time slots. That means we can assume a given random beacon value is independent of values output by an adversary in previous time slots. (Or in the case of the adversary having influence on the beacon, beacon values have lots oentropy conditioned on previous values output by the adversary.</description>
+    </item>
+    <item>
+      <title>On Folding Schemes</title>
+      <link>http://localhost:1313/zkproofs/on_folding_schemes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_folding_schemes/</guid>
+      <description>Incrementally Verifiable Computation (IVC) The NOVA Geneology Nova SuperNova HyperNova </description>
+    </item>
+    <item>
+      <title>On Polynomial Commitments</title>
+      <link>http://localhost:1313/zkproofs/on_polynomial_commitments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_polynomial_commitments/</guid>
+      <description>What is a Polynomial Commitment? Why are they useful? Merkle Trees (Random Oracle Model) KZG Hyrax square-root commitment scheme: gives $O(\sqrt{|w|})$ communication and verifier runtime, where $w = w_{1}, \dots, w_{\ell}$ is the witness. proof-of-dot-product ($4+n$ elements for vectors of length $n$) $\longrightarrow$ proof-log-of-dot-product ($4+2log n$ elements for vectors of length $n$). Verifier&amp;rsquo;s computational cost dominated by multi-exponentiation of length $n$ Matrix commitment of Groth (encodes polynomial as matrix of evaluations) SPARK Def Dense Multilinear Polynomial.</description>
+    </item>
+    <item>
+      <title>On Polynomials</title>
+      <link>http://localhost:1313/mathnotes/poly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mathnotes/poly/</guid>
+      <description>What are Polynomials and Why are they Useful? Here we will usually on provide statements. Ocassionally, if I&amp;rsquo;m feeling inspired, I&amp;rsquo;ll give proofs as well. Polynomials are the bread and butter of modern proof systems.&#xA;Settings General Polynomial Objects Notation is important here. In particular, need to make sure number of variablesand degree have consistent variables. Then we need a way to refer to different descriptions of polynomial (evaluation vs coefficient form).</description>
+    </item>
+    <item>
+      <title>On Sigma Protocols</title>
+      <link>http://localhost:1313/zkproofs/on_sigma_protocols/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_sigma_protocols/</guid>
+      <description>Why $\Sigma$? Proving Knowledge of a Discrete Logarithm Proving Knowledge of SIS Solutions Resources A Spec for $\Sigma$-Protocols </description>
+    </item>
+    <item>
+      <title>On ZKRollups</title>
+      <link>http://localhost:1313/zkworld/rollups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/rollups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>One Methods of Arithmetization</title>
+      <link>http://localhost:1313/zkproofs/on_arithmetization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_arithmetization/</guid>
+      <description>What Is a Circuit? Arithmetic Circuit Satisfiability Uniform vs Non-Uniform Computation Quadratic Arithemtic Programs (QAP) QSP Precursor: Quadratic Span Programs as a custom encoding for Boolean circuits. Superficially similar to QAPs, but only support boolean wire values and therefore only use two sets of polynomials.&#xA;Quadratic arithmetic programs are a means to batch together a set of quadratic equations with a single multiplication each into a polynomial equation. While QAPs have mainly been used to construct pairing-based SNARKs, we find that they can also be used in interactive proofs.</description>
+    </item>
+    <item>
+      <title>Overview of the PCP Theorem</title>
+      <link>http://localhost:1313/cryptocave/pcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/pcp/</guid>
+      <description>The PCP Revolution Formal Statement Proof </description>
+    </item>
+    <item>
+      <title>Paradoxes</title>
+      <link>http://localhost:1313/mathnotes/paradoxes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mathnotes/paradoxes/</guid>
+      <description> Richard-Berry Paradox: define a natural number as &amp;ldquo;the least natural number that cannot be described in fewer than twenty words&amp;rdquo;. If the number does exist, then we have just described it in thirteen words, contradicting its definitional statement. If such a number does not exist, then all natural number can be described in fewer than twenty words. </description>
+    </item>
+    <item>
+      <title>Proving as a Service</title>
+      <link>http://localhost:1313/zkworld/proving_service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/proving_service/</guid>
+      <description>Introduction What does it really take to set up a proof generation service?&#xA;Blood and Guts </description>
+    </item>
+    <item>
+      <title>Revisiting Rollup Centrism</title>
+      <link>http://localhost:1313/cryptocave/revisiting_rollup_centrism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/revisiting_rollup_centrism/</guid>
+      <description>Introduction It’s been 3 years since Vitalik’s post on A rollup-centric Ethereum roadmap. In it, he described the long-term future for eth2 as: a single high-security execution shard that everyone processes, plus a scalable data availability layer. This roadmap laid out an evolution of functionality from Ethereum as a platform for smart contracts (Prehistory) to a base layer that would scale blockchains for the next billion users. It was a great culmination of his thinking on base layers from a year prior (Base Layers and Functional Escape Velocity), which extended ideas about the roles of layer 1s and layer 2s another year earlier (Layer 1s should be innovative in the short term but less in the long term).</description>
+    </item>
+    <item>
+      <title>Setup Ceremonies</title>
+      <link>http://localhost:1313/zkproofs/on_setup_ceremonies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_setup_ceremonies/</guid>
+      <description>Why Ceremonialize Setups? The goal of this post is to try and understand various types of setup ceremonies. Why are they necessary? Why are they a bottleneck? Are there possibilities for improvement here?&#xA;Resources A Multi-Party Protocol for Constructing the Public Parameters of the Pinocchio zk-SNARK Powers-of-Tau to the People: Decenteralizing Setup Ceremonies ZK Proof Setup Ceremonies Post Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model Conclusion of Powers of Tau Ceremony </description>
+    </item>
+    <item>
+      <title>Some Paper Notes</title>
+      <link>http://localhost:1313/cryptocave/paper_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cryptocave/paper_notes/</guid>
+      <description>Lattices Practical Exact Proofs from Lattices: New Techniques to Exploit Fully-Splitting Rings Motivation/Overview&#xA;Goal: prove knowledge of secret vector $s$ that satisfies $As = t$, where $A$ and $t$ are public. $A \in \mathbb{Z}^{m \times n}$, $t \in \mathbb{Z}^{m}$, $s \in \langle-1, 0, 1\rangle^{n}$. What we will really mean is that $A$ is a matrix of polynomials in $\mathcal{R}_{q}$ over some basis in $\mathbb{Z}_{q}$. $t$ is a polynomial vector and $s$ is a short polynomial vector &amp;ndash; that is, its coefficients are themselves ternary polynomials.</description>
+    </item>
+    <item>
+      <title>The Big Picture</title>
+      <link>http://localhost:1313/zkproofs/the_big_pitcture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/the_big_pitcture/</guid>
+      <description>Motivation This is where we can talk about the big picture of constructing PIOP-based proof systems. Like PLONK article from scroll, but with more abstraction. I think the main trouble here is that we are going to have to actually taxonomize all the various proof systems, which will require understanding them in detail. We can do small parts at a time. The idea is to give a higher level view and then use the individual articles to explain various components.</description>
+    </item>
+    <item>
+      <title>The Living ZK Landscape</title>
+      <link>http://localhost:1313/zkworld/landscape/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/landscape/</guid>
+      <description>Introduction The goal here is to give an overview of the current landscape of proof systems. Ideally, to generate my own taxonomy. Most proof system papers will be referenced here. ZKProofs section is more about the techniques that are used in these papers, not necessarily about the fully detailed constructions themselves. We can talk specifically about how these systems differ here (but only at a high level). Ideally, we can also mention the developer environment as well.</description>
+    </item>
+    <item>
+      <title>Zero Knowledge Bridges</title>
+      <link>http://localhost:1313/zkworld/zk_bridges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/zk_bridges/</guid>
+      <description>What is Bridge? </description>
+    </item>
+    <item>
+      <title>Zero Knowledge Hardware</title>
+      <link>http://localhost:1313/zkworld/zk_hardware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/zk_hardware/</guid>
+      <description>Introduction Companites: Cysic, Ingonyama&#xA;ZK Hardware Acceleration: The Past, the Persent and the Future Analyzing the Hyperplonk Proof System, a Hardware Perspective Hardware Acceleration for Zero Knowledge Proofs (Paradigm) Why CPUs Suck Current Explorations ASIC Verifiable ASICs&#xA;GPU FGPA ZPU </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> Heterogeneous Utility Belt</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		Heterogeneous Utility Belt
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<h1 id="introduction">Introduction</h1>
+<p>Here is a collection of theorems and concepts that are useful. They will roughly be sorted by subject. I will attempt to give explanations or examples
+of why they are useful, at least in the contexts that I&rsquo;ve encountered them. Some will be incredibly basic, while others will be slightly more invovled.</p>
+<h1 id="number-theory">Number Theory</h1>
+<p><strong>Fermat&rsquo;s Little Theorem</strong>. Let $p$ be a prime. Then $\forall a \in \mathbb{Z}$, $a^{p} \equiv a \pmod{p}$. The more useful special case of this is
+when $\mathsf{gcd}(a, p) = 1$. Then, $a^{p-1} \equiv 1 \pmod{p}$.</p>
+<h1 id="combinatorics">Combinatorics</h1>
+<p><strong>Binomial Theorem</strong>:  $(x + y)^{n} = \displaystyle{\sum_{k = 0}^{n} \binom{n}{k} x^{k}y^{n-k}}$</p>
+<h1 id="probability">Probability</h1>
+<p><strong>Central Limit Theorem</strong>:</p>
+<p><strong>Chebyshev Bound</strong>:</p>
+<p><strong>Chernoff Bound</strong>:</p>
+<p><strong>Birthday Paradox</strong>:</p>
+<p>**</p>
+<h1 id="algebra">Algebra</h1>
+<p><strong>Konecker&rsquo;s Theorem</strong>: Let $\mathbb{F}$ be a field and $f \in \mathbb{F}[X]$ be a non-constant polynomial. Then there exists an extension field
+$\mathbb{E}$ of $\mathbb{F}$ containng a zero of $f$.</p>
+<h1 id="complexity-theory">Complexity Theory</h1>
+<h2 id="ip-theorems">IP Theorems</h2>
+<ol>
+<li><strong>IP</strong> = <strong>PSPACE</strong>.</li>
+</ol>
+<blockquote>
+<p>Any set in <strong>PSPACE</strong> has an interactive proof. This theorem is fundamental to our understanding of both interactive proofs and polynomial space
+computations. In addition, it has important applications, such as the existence of program checkers for <strong>PSPACE</strong>-complete sets, and the existence
+of zero knowledge proofs for every set in <strong>PSPACE</strong>. Known proofs go roughly along the following lines: Suppose that we are given a claim that can
+be verified in polynomial space, and we are required to design an interactive protocol for verifying the claim. We begin by expressing the claim as
+a quantified Boolean formula, using the <strong>PSPACE</strong>-completeness of the <strong>TQBF</strong> problem. Then, we <em>arithmetize</em> the formula, transforming it into a
+claim about the value of a particular arithmetic expression. Finally, we use the celebrated sum-check protocol in order to verify the value of the
+arithmetic expression One key point is that the sum-check protocol employs the fact that certain restrictions of the arithmetic expression are
+low-degree polynomials. [From Or Meir IP = PSPACE from Error Correcting Codes].</p>
+</blockquote>
+<ol start="2">
+<li>
+<p><strong>coNP $\subseteq$ IP</strong>.</p>
+</li>
+<li>
+<p><strong>#P $\subseteq$ IP</strong>.</p>
+</li>
+</ol>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> notes1</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		notes1
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<p>Note 2 - more direct economic security</p>
+<p>In Bitcoin, the cost to mine a block maps to the cost of electricity. The price of Bitcoin isn’t really correlated to electricity costs, which means that the cost to mine a block has very little to do with the value of that block.</p>
+<p>Ethereum, start with 32 stake and protocol can upgrade (as have been proposed) to adjust in the future</p>
+<p>In Ethereum, the cost to attack the network is based on the staking and slashing rates. This is an improvement, because generally, the better that ETH is performing, the more valuable the blocks, and the more valuable the capital that miners have staked. So there is some correlation. However, it’s still not perfect - staking and slashing are fixed in the protocol, and there is a fluctuating delta between the penalty to attack the network and the value in the latest block. This leads to occasions like <a href="https://www.coindesk.com/business/2023/04/03/ethereum-mev-bot-gets-attacked-for-20m-as-validator-strikes-back/">https://www.coindesk.com/business/2023/04/03/ethereum-mev-bot-gets-attacked-for-20m-as-validator-strikes-back/</a>,
+Where it is profitable for a validator to act dishonestly despite getting slashed. The response is to consider increase the staking limit and slashing rates, but don’t address the root of the problem - the crypto-economic security doesn’t map directly.</p>
+<p>In a system where we rely on proofs to collect the value in the block, it is possible to make the cost of proofs variable based on the amount at risk. The proof generated for a valuable zkEVM block should be worth more, and the amount a prover has to stake can be programmably higher. In this world, the two costs collide, meaning we can map risk and reward well, which opens up the design space for more cool stuff like bonding and underwriting.</p>
+<p>Update this idea: not to do with proving, but more to do with parameterizing slashing conditions</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

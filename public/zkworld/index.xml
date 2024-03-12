@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zkworlds on ShadowMonkey</title>
+    <link>http://localhost:1313/zkworld/</link>
+    <description>Recent content in Zkworlds on ShadowMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/zkworld/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Proof Economics</title>
+      <link>http://localhost:1313/zkworld/proof_economics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/proof_economics/</guid>
+      <description>Where Are Proofs In Economic Taxonomy? Potential Claim: Proofs are a fundamentally new form of economic object. If so, then we will need some new ideas in order to model their behavior.&#xA;Individual Decision Making in Games of Incremental Certainty Knowledge assumptions are essential in most game theoretic models. However, here the emphasis is usually placed on modelling behavior in the context of various types of uncertainty. A player&amp;rsquo;s utitlity function is thereby optimized with respect to a distribution of outcomes dependent on this uncertainty.</description>
+    </item>
+    <item>
+      <title>On ZKRollups</title>
+      <link>http://localhost:1313/zkworld/rollups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/rollups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proving as a Service</title>
+      <link>http://localhost:1313/zkworld/proving_service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/proving_service/</guid>
+      <description>Introduction What does it really take to set up a proof generation service?&#xA;Blood and Guts </description>
+    </item>
+    <item>
+      <title>The Living ZK Landscape</title>
+      <link>http://localhost:1313/zkworld/landscape/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/landscape/</guid>
+      <description>Introduction The goal here is to give an overview of the current landscape of proof systems. Ideally, to generate my own taxonomy. Most proof system papers will be referenced here. ZKProofs section is more about the techniques that are used in these papers, not necessarily about the fully detailed constructions themselves. We can talk specifically about how these systems differ here (but only at a high level). Ideally, we can also mention the developer environment as well.</description>
+    </item>
+    <item>
+      <title>Zero Knowledge Bridges</title>
+      <link>http://localhost:1313/zkworld/zk_bridges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/zk_bridges/</guid>
+      <description>What is Bridge? </description>
+    </item>
+    <item>
+      <title>Zero Knowledge Hardware</title>
+      <link>http://localhost:1313/zkworld/zk_hardware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkworld/zk_hardware/</guid>
+      <description>Introduction Companites: Cysic, Ingonyama&#xA;ZK Hardware Acceleration: The Past, the Persent and the Future Analyzing the Hyperplonk Proof System, a Hardware Perspective Hardware Acceleration for Zero Knowledge Proofs (Paradigm) Why CPUs Suck Current Explorations ASIC Verifiable ASICs&#xA;GPU FGPA ZPU </description>
+    </item>
+  </channel>
+</rss>

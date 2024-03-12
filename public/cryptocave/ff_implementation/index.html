@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> Implementing Finite Fields</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		Implementing Finite Fields
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<h1 id="motivation">Motivation</h1>
+<p>implementing algebraic settings is incredibly important for cryptography. in particular, it is important to ensure fast operations in these settings.
+getting familiar with these operations and what algorithms are available for them in the context of digital architectures is useful. this is my first
+attempt at implementing a finite field. i&rsquo;m hoping to keep notes here that document what i learn along the way.</p>
+<h1 id="incremental-notes">incremental notes</h1>
+<h2 id="reduction-algorithms-or-how-to-choose-a-modulus">Reduction Algorithms or How to Choose a Modulus</h2>
+<p>Modular multiplication can be done in the standard way. If we wish to compute $C = AB \pmod{N}$, then we can first multiply $A$ and $B$ then perform
+division in order to obtain $P = NQ + C$, where $C, Q \in \mathbb{Z}_{&lt; N}$.</p>
+<p><strong>A Bit of History</strong></p>
+<ol>
+<li>Knuth: $O(n^{2})$ multiplications and $O(n)$ divisions, but divisions are expensive</li>
+<li>Observe that modern computer architectures internally store and compute on data in binary format using fixed word size $r = 2^{w}$. This means that
+in practice
+<ul>
+<li>All arithmetic operations are computed implicity modulo $2^{w}$ for free</li>
+<li>Divisions and multiplications by powers of 2 are computed via shifts</li>
+</ul>
+</li>
+<li>Barret: uses precomputed scaled variant of modulus&rsquo; reciprocal to get cheap divisions $\longrightarrow$ Barret multiplication gets $O(n^{2})$
+multiplications.</li>
+<li><strong>Montgomery Multiplication</strong>:
+<ul>
+<li>Preferred choice in cryptographic applications.</li>
+<li>Most efficient method when generic modulus is used.</li>
+<li>Has advantages when guarding against certain types of cryptographic attacks</li>
+<li>Generalization of Hensel&rsquo;s odd division for 2-adic numbers</li>
+</ul>
+</li>
+</ol>
+<p><strong>To Include</strong></p>
+<ol>
+<li>Barrett Reduction</li>
+<li>Montgomery Reduction</li>
+<li>Crandall Reduction</li>
+<li>Solinas Reduction</li>
+</ol>
+<h2 id="polynomials">Polynomials</h2>
+<p><strong>Representing Polynomials</strong>:</p>
+<ol>
+<li>Horner&rsquo;s Form for minimizing multiplications</li>
+<li>Estrin&rsquo;s Form for minimizing depth of circuit for computing the polynomial, useful for architectures that enjoy some level of parallelism</li>
+</ol>
+<p><strong>Evaluating Polynomials</strong>:</p>
+<ol>
+<li>Horner&rsquo;s Method: optimal algorithm for evaluating polynomials. For a degree $n$ univariate polynomial $p(X)$, evaluation takes
+<ul>
+<li>$n$ additions and $n$ multiplications or $n$ fused multiply-adds</li>
+<li>Storage requirement is $n \cdot \lceil \log_{2}(x)\rceil$</li>
+</ul>
+</li>
+<li>Preprocessing: Multi-point evaluation</li>
+</ol>
+<p>Sources:</p>
+<ol>
+<li><a href="https://eprint.iacr.org/2019/1411.pdf">Isochronous Gaussian Sampling: From Inception to Implementation</a></li>
+</ol>
+<p><strong>Operating on Polynomials</strong>:</p>
+<ol>
+<li>Addition, multiplication, division &ndash;&gt; can use FFTs/NTTs here.</li>
+<li>Root finding?</li>
+</ol>
+<h2 id="extension-fields">Extension Fields</h2>
+<p><strong>Important Facts about Extension Fields</strong>:</p>
+<p><strong>Representing Extension Field Elements</strong>:</p>
+<ol>
+<li>Representing elements of the extension field</li>
+<li>Computing frobenius automorphism</li>
+<li>Irreducible polynomials
+<ul>
+<li>For example, for $\mathbb{F}_{p}$, to construct a quadratic extension, we need an irreducible degree 2 polynomial. Anything of the form $x^{2}
+<ul>
+<li>r$ should do. Here it would be good to legit just list out the irreducible polynomials that can be used to construct quadratic and cubic
+extensions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Stacking Extensions</strong>:</p>
+<p>The point here is that we may want to construct a larger extension field by stacking extensions &ndash; that is compute a sextic extension by taking the
+quadratic extension of the cubic extension.</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

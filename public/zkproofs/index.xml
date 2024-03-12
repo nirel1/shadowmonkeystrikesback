@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RandomWalks on ShadowMonkey</title>
+    <link>http://localhost:1313/zkproofs/</link>
+    <description>Recent content in RandomWalks on ShadowMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/zkproofs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Sumcheck</title>
+      <link>http://localhost:1313/zkproofs/on_sumcheck_arguments/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_sumcheck_arguments/</guid>
+      <description>Outline Motivation What does the sumcheck protocol do? Detailed multivariate sumcheck protocol Discussion of polynomial descriptions Discussion of $\mathsf{check}_{2}$&amp;rsquo;s seeming redundancy Discussion of $\mathsf{check}_{3}$ Analysis of multivariate sumcheck protocol Prover complexity (time, space, communication) Verifier complexity (time, space, communication) Security (completeness, soundness) How to get from an R1CS instance to a Sumcheck Instance How does sumcheck figure into zero knowledge proof systems Matrices to functions Functions to ML polynomials Query reduction to get sumcheck instance</description>
+    </item>
+    <item>
+      <title>A Taxonomy of Arguments</title>
+      <link>http://localhost:1313/zkproofs/proof_types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/proof_types/</guid>
+      <description>Primary range proofs: Prove that witness $x$ is in a given range $[\alpha, \beta]$. lookup proof: Given table $T$, prove that witness $x\in T$. copy proof: permutation proof: Secondary linear interactive proofs Groth16: non-interactive linear proof (NILP) $\rightarrow$ split NILP $\rightarrow$ disclosure free NILP Renamed from 2-move algebraic input-oblivious linear interactive proof Non-interactive proof for relation generator $\mathcal{R}$ if it has perfect completeness and statistical knowledge soundness against affine prover strategies.</description>
+    </item>
+    <item>
+      <title>Directory of Zero Knowledge Definitions, Notions, Tools</title>
+      <link>http://localhost:1313/zkproofs/zk_knowledge_repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/zk_knowledge_repo/</guid>
+      <description>Introduction It&amp;rsquo;s very difficult to keep track of all the various notions related to zero knowledge. Indeed there are many, making zero knowledge an extremely nuanced topic and its academic literature difficult to navigate. There are canonical definitions that are commonplace, but developing an intuition for more esoteric notions can be difficult. The goal of this page is to collect these various definitions under common notation in order to systematically build intuition for what concepts these definitions aim to capture and how they are connected.</description>
+    </item>
+    <item>
+      <title>FRI Protocol and Its Applications</title>
+      <link>http://localhost:1313/zkproofs/on_fri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_fri/</guid>
+      <description>Background Reed Solomon Codes FFT and Smooth Multiplicative Subgroups Low-Degree Tests Interactive Oracle Proofs Fast Reed Solomon Interactive Oracle Proofs of Proximity (FRI) FRI $\longrightarrow$ Polynomial Commitment Batched FRI References Fiat Shamir Security of FRI </description>
+    </item>
+    <item>
+      <title>Lookup Arguments</title>
+      <link>http://localhost:1313/zkproofs/on_lookup_arguments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_lookup_arguments/</guid>
+      <description>What are Lookup Arguments Good For The main goal of a lookup argument is to prove that a particular value $x$ is contained in a given table $T$. Lookup tables are useful for a number of reasons, but should be principly thought of as a way to express high-degree algebraic functions.&#xA;Arya and the Lookup Proposal To enable decomposition proofs into odd and even-position bits, we develop a new lookup proof that makes it possible to check that a field element belongs to a table of permitted values.</description>
+    </item>
+    <item>
+      <title>On Folding Schemes</title>
+      <link>http://localhost:1313/zkproofs/on_folding_schemes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_folding_schemes/</guid>
+      <description>Incrementally Verifiable Computation (IVC) The NOVA Geneology Nova SuperNova HyperNova </description>
+    </item>
+    <item>
+      <title>On Polynomial Commitments</title>
+      <link>http://localhost:1313/zkproofs/on_polynomial_commitments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_polynomial_commitments/</guid>
+      <description>What is a Polynomial Commitment? Why are they useful? Merkle Trees (Random Oracle Model) KZG Hyrax square-root commitment scheme: gives $O(\sqrt{|w|})$ communication and verifier runtime, where $w = w_{1}, \dots, w_{\ell}$ is the witness. proof-of-dot-product ($4+n$ elements for vectors of length $n$) $\longrightarrow$ proof-log-of-dot-product ($4+2log n$ elements for vectors of length $n$). Verifier&amp;rsquo;s computational cost dominated by multi-exponentiation of length $n$ Matrix commitment of Groth (encodes polynomial as matrix of evaluations) SPARK Def Dense Multilinear Polynomial.</description>
+    </item>
+    <item>
+      <title>On Sigma Protocols</title>
+      <link>http://localhost:1313/zkproofs/on_sigma_protocols/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_sigma_protocols/</guid>
+      <description>Why $\Sigma$? Proving Knowledge of a Discrete Logarithm Proving Knowledge of SIS Solutions Resources A Spec for $\Sigma$-Protocols </description>
+    </item>
+    <item>
+      <title>One Methods of Arithmetization</title>
+      <link>http://localhost:1313/zkproofs/on_arithmetization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_arithmetization/</guid>
+      <description>What Is a Circuit? Arithmetic Circuit Satisfiability Uniform vs Non-Uniform Computation Quadratic Arithemtic Programs (QAP) QSP Precursor: Quadratic Span Programs as a custom encoding for Boolean circuits. Superficially similar to QAPs, but only support boolean wire values and therefore only use two sets of polynomials.&#xA;Quadratic arithmetic programs are a means to batch together a set of quadratic equations with a single multiplication each into a polynomial equation. While QAPs have mainly been used to construct pairing-based SNARKs, we find that they can also be used in interactive proofs.</description>
+    </item>
+    <item>
+      <title>Setup Ceremonies</title>
+      <link>http://localhost:1313/zkproofs/on_setup_ceremonies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/on_setup_ceremonies/</guid>
+      <description>Why Ceremonialize Setups? The goal of this post is to try and understand various types of setup ceremonies. Why are they necessary? Why are they a bottleneck? Are there possibilities for improvement here?&#xA;Resources A Multi-Party Protocol for Constructing the Public Parameters of the Pinocchio zk-SNARK Powers-of-Tau to the People: Decenteralizing Setup Ceremonies ZK Proof Setup Ceremonies Post Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model Conclusion of Powers of Tau Ceremony </description>
+    </item>
+    <item>
+      <title>The Big Picture</title>
+      <link>http://localhost:1313/zkproofs/the_big_pitcture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zkproofs/the_big_pitcture/</guid>
+      <description>Motivation This is where we can talk about the big picture of constructing PIOP-based proof systems. Like PLONK article from scroll, but with more abstraction. I think the main trouble here is that we are going to have to actually taxonomize all the various proof systems, which will require understanding them in detail. We can do small parts at a time. The idea is to give a higher level view and then use the individual articles to explain various components.</description>
+    </item>
+  </channel>
+</rss>

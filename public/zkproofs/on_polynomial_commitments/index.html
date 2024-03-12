@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> On Polynomial Commitments</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		On Polynomial Commitments
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<p> </p>
+	<h1 id="what-is-a-polynomial-commitment">What is a Polynomial Commitment?</h1>
+<h1 id="why-are-they-useful">Why are they useful?</h1>
+<h1 id="merkle-trees-random-oracle-model">Merkle Trees (Random Oracle Model)</h1>
+<h1 id="kzg">KZG</h1>
+<h1 id="hyrax">Hyrax</h1>
+<ol>
+<li>square-root commitment scheme: gives $O(\sqrt{|w|})$ communication and verifier runtime, where $w = w_{1}, \dots, w_{\ell}$ is the witness.</li>
+<li>proof-of-dot-product ($4+n$ elements for vectors of length $n$) $\longrightarrow$ proof-log-of-dot-product ($4+2log n$ elements for vectors of
+length $n$).
+<ul>
+<li>Verifier&rsquo;s computational cost dominated by multi-exponentiation of length $n$</li>
+</ul>
+</li>
+<li>Matrix commitment of Groth (encodes polynomial as matrix of evaluations)</li>
+<li></li>
+</ol>
+<h1 id="spark">SPARK</h1>
+<p><strong>Def Dense Multilinear Polynomial</strong>.</p>
+<p><strong>Def Sparse Multilinear Polynomial</strong>.</p>
+<p>From Spartan, extended in Lasso. A cryptographic compiler that takes any polynomial commitment scheme for dense multilinear polynomials and transforms
+it into an more efficient polynomial commitment for <em>sparse</em> polynomials. In particular, uses ZK-snark with sublinear verification for restricted
+class of NP statements. SPARK uses Hyrax as a starting point.</p>
+<h1 id="fri">FRI</h1>
+<h1 id="dark">DARK</h1>
+<h1 id="lattice-based">Lattice-Based</h1>
+<h1 id="taxonomy">Taxonomy</h1>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

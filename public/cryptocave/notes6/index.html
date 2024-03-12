@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> notes6</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		notes6
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<p>Note 6 - Off-chain incentivization (with crypto economic security)</p>
+<p>It seems that incentivizing off-chain activity has been a topic of discussion. Eigenlayer brought more attention to the value of crypto economic security, building a framework for others to design slashing conditions. Cowswap was able to design a mechanism where solvers operate from an off-chain orderbook to match ‘coincidence of wants’ that relies on slashing, so that solvers stake and they can be economically enforced to act correctly. However, one criticism of Ethereum’s merge (tim from risc0) has been that there are less constraints - in the PoW model, the rules of Ethereum were enforced such that a block had to contain valid smart contracts. However, after the merge, these rules are now arbitrary - a ⅔ majority of validators could vote on a different state of the chain. As such, the security of cowswap is also limited - solvers can act maliciously, but they’ll be slashed.</p>
+<p>By adding a constraint, these systems can be more effective - especially for off-chain computation. On Cowswap, the computation that solvers perform can be verified. Given a specific set of orders, they should be matched according to a specific algorithm. This way, the worst that a solver can do is stall instead of providing the result of its computation along with proof that the computation was done correctly. Another thing to investigate is how multiple solvers are rewarded in cowswap.</p>
+<p>Flashbots looked into this, but chose TEE computation for now because privacy is important for their computations in SUAVE, and because distributing zk proofs is currently too slow. In the future what we’re building will likely be of interest to them.</p>
+<p>More notes</p>
+<p>What is blockspace
+Opportunity to have computation work done on many machines
+Markets emerge</p>
+<p>Can stake for this opportunity</p>
+<p>Rollups are just off chain computation until sufficiently decentralized</p>
+<p>Some applications on ethereum won’t migrate to rollups because it’s not in line with their ethos</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>

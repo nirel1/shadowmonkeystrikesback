@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	
+	
+
+<meta charset = "utf-8">
+<title> notes1</title>
+
+<link rel = "stylesheet" href = "http://localhost:1313/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		notes1
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<p>Note 1 - EVM</p>
+<p>Trust + stickiness</p>
+<p>Why the EVM sticks</p>
+<p>In blockchains people talk a lot about trust, and especially about minimizing trust. Truthfully, trust can only migrate, and it is a subjective measure. Many of us in the space happen to believe that humans are often the least trustworthy part of a system, and by minimizing their involvement we maximize the trustworthiness of the system (all other things equal).</p>
+<p>This is all well and good for a system like Bitcoin - there’s no clear authority and the community is allergic to most upgrades. But, out of simplicity evolves complexity, and complexity needs upgrades. New data structures, programs, virtual machines, consensus mechanisms - they can all be buggy. And when a system is financialized, these bugs lead to exploits. After you’ve seen these systems get hacked, you’ll actually start to trust them more when they have the proper fallback mechanisms, which almost always require human involvement.</p>
+<p>Trust in Ethereum seems to be two-fold: it is trust in the battle-tested, careful to change system (EVM and recently, PoS), and trust in Ethereum’s brand, community, and vision. I’ve found from asking around that the majority of people (in my small sample) believe that if there were to be another large exploit, Ethereum would fork again to protect the majority of its users.</p>
+<p>Trust points to why the EVM has become so prominent. It is the most trusted way to build and use decentralized applications. Entire businesses have emerged out of optimizing the gas costs, studying each opcode, and writing in assembly for this VM. So too with Solidity tooling. And so, despite many other competing consensus mechanisms, VMs, and designs for blockchains emerging, both developers and users have continued to choose Ethereum more than any other chain.</p>
+<p>But, Ethereum is changing. It was once a vision of executing smart contract logic, distributed across many miners. A rollup-centric future points to a world where Ethereum is the base layer for other decentralized and permissionless systems to build atop.</p>
+<p>That means the purposes that EVM serves must change, right?</p>
+<p>In my opinion, kinda.</p>
+<p>I think there is a certain set of EVM users (perhaps institutions, large applications) that will always rely on the EVM for its initial purpose: to execute smart contracts. These users will not want to venture beyond the boundaries of smart contract risk. The EVM is tried and tested, and operating within its bounds will always pose less risk than operating both inside and outside its bounds.</p>
+<p>On the other hand, the vision seems to be that a growing set of users will rely on Ethereum (and the EVM) for operations that provide guarantees for stuff outside of Ethereum. Two examples of these future operations are precompiles for KZG commitments and precompiles for new(ish) elliptic curves.</p>
+<p>Precompiles for KZG commitments will make it cheaper to use Ethereum for data availability (DA).
+Precompiles for elliptic curves will make it cheaper to verify SNARKS and ZK-SNARKs on-chain.</p>
+<p>In PBS, block builders are appointed to perform t</p>
+<p>For proving, it’s unclear who does that work</p>
+<p>This is especially useful for rollups, which rely on Ethereum to have data temporarily available to guarantee that</p>
+<p>I would argue that in the long term, more complexity evolves around these features, and many smart contracts will emerge that get very good at providing guarantees for stuff off-chain.</p>
+<p>Each of these is an addition to the EVM that</p>
+<p>, where rollups and potentially other applications can store commitments to data at a much lower cost.</p>
+<p>Both will likely become common operations .</p>
+<p>provide economic security to</p>
+<p>And restaking, which I won’t get into here.</p>
+<p>two key features will become increasingly important in the EVM: data availability and proving.</p>
+<p>Rollups</p>
+<p>The EVM will become particularly useful for verifying off-chain computation, because it is inherently cheaper to verify than it is to re-run computation across a network of 1M+ validators. This might take some time, especially as bugs in proving off-chain computation emerge and we experience many exploits. Eventually, though, the tradeoffs will evidence that for most applications, it will make more sense to compute off-chain and verify on-chain. At early onset, this is why zkEVMs make sense. They can port the computation environment that applications and builders are familiar with, so that all it takes (hopefully) is redeploying up the stack, and ta-da! Your application is much cheaper, but still settles to Ethereum - through verification of a proof of the execution of transactions on that application along with all the others in a rollup. But, I think zkEVM rollups make less sense for some of these applications. Rollups bundle verification of proofs altogether, so if the rollup defaults, all its applications break. This will probably happen to at least one, if not multiple rollups - what I mean is there will be some transaction that is bundled into a proof and verified on chain when it in fact shouldn’t be, and the rollup might become undercollateralized. Also, a rollup fragments an application’s identity (this might not always be the case), as they likely associate with the complete decentralization of Ethereum and don’t want to become a rollup’s kiddie project.</p>
+<p>This begs the question: if a lot of trust is due to the engineering soundness of the EVM, where does that trust go when Ethereum serves different functions?</p>
+<p>Part 2: proofs</p>
+<p>Migrate to trusting da, circuits,</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2024
+	</footer>
+
+
+</body>
+</html>
