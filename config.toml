@@ -1,4 +1,4 @@
-baseURL = 'http://ShadowMonkey.pr/'
+baseURL = 'https://shadowmonkeystrikesback.vercel.app/'
 languageCode = 'en-us'
 
 # initializing global title parameter
