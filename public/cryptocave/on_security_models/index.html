@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	
+	
+
+<meta charset = "utf-8">
+<title> On Cryptographic Security Models</title>
+
+<link rel = "stylesheet" href = "http://ShadowMonkey.pr/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		On Cryptographic Security Models
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<h1 id="random-oracle-model-rom">Random Oracle Model (ROM)</h1>
+<p>Models cryptographic hash functions as random oracles.</p>
+<h2 id="random-beacons-vs-random-oracles">Random Beacons vs Random Oracles</h2>
+<blockquote>
+<p>The difference between random beacons and the much more well-known random oracles, is that their values are not available until certain time slots.
+That means we can assume a given random beacon value is independent of values output by an adversary in previous time slots. (Or in the case of the
+adversary having influence on the beacon, beacon values have lots oentropy conditioned on previous values output by the adversary.) This is
+completely different from a random oracle value, that can have entropy zero conditioned on adversary messages (e.g, if the adversary simply queries
+and outputs the RO value).</p>
+</blockquote>
+<ol>
+<li><a href="https://eprint.iacr.org/2017/1050.pdf">Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model</a></li>
+</ol>
+<h1 id="generic-group-model-ggm">Generic Group Model (GGM)</h1>
+<blockquote>
+<p>At the highest level, generic group algorithms are algorithms that do not exploit any special structrue of the representation of the group elements
+and can thus be applied in any cyclic group. More concretely, a generic algorithm may use only the abstract group operation and test whether two
+group elements are equal. This property makes it possible to prove information-theoretic lower bounds on the running time for generic algorithms.</p>
+<p>The class of algorithms encompasses many important algorithms such as the baby-step giant-step algorithm and its generalization for composite-order
+groups (also known as Pohlig-Hellman) as well as Pollard&rsquo;s rho algorithm.</p>
+</blockquote>
+<h1 id="algebraic-group-model-agm">Algebraic Group Model (AGM)</h1>
+<ol>
+<li><a href="https://eprint.iacr.org/2017/620.pdf">The Algebraic Group Model and its Applications</a></li>
+</ol>
+<h2 id="hidden-order-groups">Hidden Order Groups</h2>
+<h1 id="standard-model">Standard Model</h1>
+<h1 id="linear-code-random-oracle-model-lcrom">Linear Code Random Oracle Model (LCROM)</h1>
+<p><a href="https://eprint.iacr.org/2022/383.pdf">On Succinct Non-Interactive Arguments in Relativized Worlds</a></p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2023
+	</footer>
+
+
+</body>
+</html>

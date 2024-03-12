@@ -1,0 +1,18 @@
+baseURL = 'http://ShadowMonkey.pr/'
+languageCode = 'en-us'
+
+# initializing global title parameter
+# vars from global config can be accessed with .Site.<param>
+title = 'ShadowMonkey'
+
+#theme = 'archie'
+#Main menu items 
+
+[params]
+name = "Prashanth Ramakrishna"
+
+[markup]
+defaultMarkdownHandler = 'goldmark'
+
+[markup.goldmark.renderer]
+unsafe = true 

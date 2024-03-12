@@ -1,0 +1,11 @@
+{{ define "main" }}
+	<h1>
+		{{ .Params.Title }}
+	
+		{{ if .Params.katex }}
+			{{ partial "katex.html" . }}
+		{{ end }}
+	</h1>
+	<p>{{ .Date.Format "January 2, 2006" }}</p>
+	{{ .Content }}
+{{ end }}

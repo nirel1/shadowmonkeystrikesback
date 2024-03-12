@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	
+	
+
+<meta charset = "utf-8">
+<title> Blockchain 102 (Consensus)</title>
+
+<link rel = "stylesheet" href = "http://ShadowMonkey.pr/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		Blockchain 102 (Consensus)
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<h2 id="problem">Problem</h2>
+<p>I want to send money over the internet using a distributed network but I don&rsquo;t trust malicious nodes.</p>
+<h2 id="solution">Solution</h2>
+<p>Combine consensus protocols to create a Byzantine Fault Tolerant consensus mechanism.</p>
+<h2 id="consensus">Consensus</h2>
+<p>can probably delete this paragraph
+In order to add to the ledger, transactions undergo a process to check that they’re legitimate. But, it’d be inefficient to try to process every transaction one-by-one; instead, the transactions are bundled together into blocks. Each block goes through the process before being added to the chain of all previous blocks. This process is known as a consensus mechanism, and these processes must have byzantine fault tolerance to be secure.
+<a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/">Consensus Mechanisms</a></p>
+<h3 id="nakamoto-consensus">Nakamoto Consensus</h3>
+<p>In Bitcoin, Nakamoto Consensus combines consensus protcols in order to incentivize nodes to act honestly.
+<a href="https://bitcoinmagazine.com/guides/what-is-nakamoto-consensus-bitcoin">https://bitcoinmagazine.com/guides/what-is-nakamoto-consensus-bitcoin</a></p>
+<h4 id="proof-of-work">Proof of Work</h4>
+<p>In Proof of Work (PoW), miners compete to solve complex cryptographic puzzles in order to add a new block to the blockchain (<a href="https://medium.com/certik/how-bitcoin-works-hashing-e897157f7940">hashing</a>). Solving the puzzle relies on incrementing a nonce (arbitrary number) in the block until the correct value that represents the block’s hash and required zero bits for the beginning of the nonce is reached.</p>
+<p>The difficulty of these puzzles adjusts to ensure that the time taken to solve them remains approximately constant, thereby securing a steady addition of new blocks. These puzzles are also stochastic, meaning there is no way to forecast which miner will crack a given puzzle. This replaces the need for the leader election required in other protocols like Proof of Stake (PoS).</p>
+<p>The more computational (hashing) power that a miner has dedicated to the network, the more likely that they are to crack the puzzle. A miner proves that they have provided computational power by providing a solution to the puzzle, and because electricity is a real cost, a malicious miner will have to pay to play.</p>
+<p>Once the puzzle is solved and a miner proposes a block, the network validates the block (checking that no transactions are double-spent). Successful miners are rewarded with new bitcoin and transaction fees, providing an economic incentive for maintaining the integrity and security of the network. Watch this video for more detail: <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4&amp;vl=en">But How Does Bitcoin Actually Work?</a></p>
+<h4 id="longest-chain-rule">Longest Chain Rule</h4>
+<p>In Nakamoto Consensus, the longest chain is considered the canoncial (valid) chain because it has had the largest amount of computational power dedicated. This allows new nodes to accept the longest chain as proof of Bitcoin&rsquo;s state history and circumvents the need for a central authority to keep track of the valid chain.</p>
+<h4 id="attacks">Attacks</h4>
+<p>51% of the miners are required to force a malicious block, continue to produce new blocks after it, and attack the network. Due to the Bitcoin network’s current size, the economic cost of accruing over 51% of the hashing power is extremely high.</p>
+<h4 id="finality">Finality</h4>
+<p>In Bitcoin the validity of blocks is always probablistic. Even in the longest chain, there is no guarantee that the most recent block is valid. There is always a small chance that another chain is the canonical one, and it will eventually outgrow what is the longest chain at (assuming the majority of nodes are still honest). When the longest chain changes to a new longest chain, this is known as a reorganization (reorg). Reorgs happen less than twice a year. <a href="https://learnmeabitcoin.com/technical/chain-reorganisation">https://learnmeabitcoin.com/technical/chain-reorganisation</a></p>
+<p>However, as a block gets buried by new blocks it is increasingly unlikely that it is part of an incorrect longest chain. As a rule of thumb, most of the industry follows a 6 block maturation, meaning a block is considered final after 5 blocks have been added after it.</p>
+<h3 id="ethereum-consensus">Ethereum Consensus</h3>
+<p>In Ethereum (a blockchain launched in 2015) the consensus mechanism consists of Proof of Stake (PoS), Random Leader Election, and a Fork Choice Rule. Ethereum used to rely on PoW consensus but switched to PoS in September 2022 in an event known as &lsquo;The Merge&rsquo;.
+<a href="https://ethereum.org/en/roadmap/merge/">https://ethereum.org/en/roadmap/merge/</a>
+<a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/">https://ethereum.org/en/developers/docs/consensus-mechanisms/</a></p>
+<h4 id="proof-of-stake">Proof of Stake</h4>
+<p>Ethereum&rsquo;s Proof of Stake (PoS) is a consensus mechanism where validators (like miners) are selected to propose and vote on blocks of transactions, based on the amount of ETH (token native to Ethereum) they willingly &lsquo;stake&rsquo; as collateral to earn rewards. The selection process is probabilistic, with higher-staked nodes having a higher chance of being chosen. The staked ETH then acts as collateral that can be destroyed if the validator behaves dishonestly or lazily.</p>
+<h4 id="random-leader-election">Random Leader Election</h4>
+<p>In Ethereum, time is divided up into twelve second units called &lsquo;slots&rsquo;. In each slot a single validator is selected to propose a block. In order to protect the network, the validator for each slot is chosen pseudo-randomly using a protocol called RANDAO.
+<a href="https://eth2book.info/capella/part2/building_blocks/randomness/">https://eth2book.info/capella/part2/building_blocks/randomness/</a></p>
+<h4 id="fork-choice-rule">Fork Choice Rule</h4>
+<p>When a validator must choose between two seemingly correct blocks at the head of a chain, they rely on an algorithm that favors the fork with the most attestations (votes in favor from other validators).
+<a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#fork-choice">https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#fork-choice</a></p>
+<h4 id="attacks-1">Attacks</h4>
+<p>⅔ of the validators must vote to approve a block. Still a 51% attack.
+<a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#pos-and-security">https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#pos-and-security</a></p>
+<h4 id="finality-1">Finality</h4>
+<p>The first block in each epoch is a checkpoint. Validators vote for pairs of checkpoints that it considers to be valid. If a pair of checkpoints attracts votes representing at least two-thirds of the total staked ETH, the checkpoints are upgraded.
+<a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#finality">https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#finality</a></p>
+<h4 id="delegated-proof-of-stake">Delegated Proof of Stake</h4>
+<p>Remember BFT? Practical Byzantine Fault Tolerance (pBFT) is a variant of BFT consensus, where there is a limited membership list of nodes that are elected as leaders. This variant takes advantage of the tradeoff between decentralization and scalability in the trilemma - by limiting the number of nodes that the network decentralizes voting across, communication between nodes is reduced and the network is less latent. Delegated proof of stake takes advantage of a similar function, whereby stakers delegate their stake to a limited membership list that validate on their behalf.
+<a href="https://academy.binance.com/en/articles/delegated-proof-of-stake-explained">https://academy.binance.com/en/articles/delegated-proof-of-stake-explained</a></p>
+<h3 id="proof-of-authority">Proof of Authority</h3>
+<p>Proof of Authority (PoA) is a reputation-based consensus algorithm that leverages the value of identities. Block validators stake their reputations instead of their money. Therefore, PoA blockchains are secured by the validating nodes that are arbitrarily selected as trustworthy entities.
+<a href="https://academy.binance.com/en/articles/proof-of-authority-explained">https://academy.binance.com/en/articles/proof-of-authority-explained</a></p>
+<h3 id="proof-of-history">Proof of History</h3>
+<p>Proof of History is a sequence of computation that can provide a way to cryptographically verify passage of time between two events. Solana (a blockchain launched in 2020) uses Proof of History to prove that transactions are added to a block at specific points in time. Ultimately, this allows nodes to verify transactions in parallel.
+<a href="https://tokens-economy.gitbook.io/consensus/chain-based-proof-of-capacity-space/proof-of-history">https://tokens-economy.gitbook.io/consensus/chain-based-proof-of-capacity-space/proof-of-history</a></p>
+<h2 id="proof-of-storage">Proof of Storage</h2>
+<h3 id="proof-of-replication">Proof of Replication</h3>
+<h3 id="proof-of-spacetime">Proof of Spacetime</h3>
+<p>Filecoin is a decentralized and permissionless storage provider. It functions similarly to DropBox, but the idea is that any node can participate in the network by providing storage space, such that Filecoin can never delete a user&rsquo;s data. Proof of Spacetime is a way that nodes in the network prove that they are continuously providing storage space in order to be rewarded.
+<a href="https://spec.filecoin.io/algorithms/pos/post/">https://spec.filecoin.io/algorithms/pos/post/</a></p>
+<p>Why is this important?
+Dunbar&rsquo;s number</p>
+<h2 id="summary">Summary</h2>
+<p>Using a blockchain coupled with a robust consensus mechanism, we can send money over the internet without trusting malicious nodes.</p>
+<p>Now we&rsquo;ve discussed the different data structures, consensus mechanisms, tradeoffs between scalability, security, and decentralization, and variance in storage size, latency, and throughput. As you might imagine, many different blockchains have emerged with their own native token, each weighing these tradeoffs uniquely.</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2023
+	</footer>
+
+
+</body>
+</html>

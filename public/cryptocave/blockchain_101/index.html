@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+	
+	
+
+<meta charset = "utf-8">
+<title> Blockchain 101</title>
+
+<link rel = "stylesheet" href = "http://ShadowMonkey.pr/sass/main.min.css">
+
+ 
+
+
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/zkproofs/">RandomWalks</a></li>
+		<li><a href="/cryptocave/">CryptoCave</a></li>
+		<li><a href="/zkworld/">ZKWorld</a></li>
+		<li><a href="/mathnotes">Notes</a></li>
+	</ul>
+</nav>
+
+	
+	<h1>
+		Blockchain 101
+	
+		
+			<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+	integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+    crossorigin="anonymous"
+/>
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+	integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"
+></script>
+
+
+
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+	integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+	crossorigin="anonymous"
+	onload="
+	renderMathInElement(document.body,{delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});
+	"
+></script>
+
+
+		
+	</h1>
+	<p>January 1, 0001</p>
+	<h2 id="problem">Problem</h2>
+<p>I want to send money over the internet but I don&rsquo;t trust financial intermediaries.</p>
+<h2 id="solution">Solution</h2>
+<p>Instead of giving a financial intermediary control over the recordbook, distribute the recordbook across a network of participants.</p>
+<h2 id="naive-approach">Naive Approach</h2>
+<p>How does one distribute a recordbook across a network of participants?
+<br>
+<br>
+Well, not unlike the internet itself, we can create a network of nodes (participants) that can transmit messages to one another. Each participant in the network can can store its own version of the recordbook. When the system first starts (genesis), all participants in the network will have an empty recordbook. When a particpant wants to add a record, they add it to their local version. Then, they can broadcast it to other participants, and once a sufficient number of participants agree on the new record, it is considered the latest addition to the correct recordbook.</p>
+<p>You might be asking:</p>
+<ul>
+<li>How do we determine the correct recordbook?</li>
+<li>What if the participant or record is malicious?</li>
+<li>What if other participants&rsquo; machines go down?</li>
+<li>What is the sufficient number of participants for agreement?</li>
+<li>So on and so forth</li>
+</ul>
+<p>Here lie some of the many challenges of distributed consensus.</p>
+<h2 id="distributed-consensus">Distributed Consensus</h2>
+<p>This problem is formally addressed in 1972 in a research paper titled &lsquo;The Byzantine Generals Problem&rsquo;:</p>
+<blockquote>
+<p><em>Several divisions of the Byzantine army are camped outside an enemy city, each division commanded by its own general. The generals can communicate with one another only by messenger. After observing the enemy, they must decide upon a common plan of action. However, some of the generals may be traitors, trying to prevent the loyal generals from reaching agreement. The generals must be able to guarantee that:</em></p>
+<ul>
+<li>All honest generals decide on the same plan of action</li>
+<li>A small number of traitors cannot cause the honest generals to adopt a malicious plan
+<br>
+<br>
+<img src="/byzantine.png" alt="byzantine" title="Byzantine Generals Problem">
+<br>
+<br>
+<a href="https://www.microsoft.com/en-us/research/uploads/prod/2016/12/The-Byzantine-Generals-Problem.pdf">Original Research Paper</a></li>
+</ul>
+</blockquote>
+<p>In this paper, we are prescribed a set of algorithms that relay unforgeable, signed messages between parties until a threshold is met to reach agreement. Lamport’s paper forecasts many of the challenges with transmitting messages in a distributed network of nodes. include leader election, mention oversimplification</p>
+<p>The summary above is oversimplified, and Elaine Shi covers everything to know of Byzantine Broadcast, Distributed Consensus, and how they relate to blockchains here:
+<br>
+<a href="http://elaineshi.com/docs/blockchain-book.pdf">Foundations of Distributed Consensus and Blockchains</a></p>
+<h2 id="byzantine-fault-tolerance-bft">Byzantine Fault Tolerance (BFT)</h2>
+<p>In computer systems, ‘<a href="https://en.wikipedia.org/wiki/Byzantine_fault">Byzantine Fault Tolerance</a>’ refers to the resiliency of a system with unreliable components - like unloyal generals. To stay secure, the distributed recordbook needs a BFT Consensus mechanism so that honest participants in the network can reach agreement in spite of attacks from dishonest participants. A consensus mechanism refers to a collection of protocols that ensure participants reach agreement, which can include incentivization, punishment, and random selection. More on this in the next article. (link)</p>
+<h2 id="bitcoin">Bitcoin</h2>
+<p>In 2008, a BFT consensus mechanism was applied to financial transactions in the <a href="https://bitcoin.org/bitcoin.pdf">Bitcoin whitepaper</a>. The paper invents a record keeping system that is resilient against traitors who would insert false records. Bitcoin uses a ledger, also known as a blockchain, to record transactions between accounts. Using Bitcoin, participants can transact without relying on a financial institution.</p>
+<h3 id="append-only-ledger">Append-Only Ledger</h3>
+<p>The recordbook we refer to above is formalized in Bitcoin as an append-only public ledger. Once a record is added to the ledger, it cannot be removed - this protects transactions from change or reversal once they are finalized.</p>
+<h3 id="blocks-as-records">Blocks as Records</h3>
+<p>However, it is time-intensive for nodes in a network to reach agreement on adding a record to the ledger.
+Rather than agreeing on one transaction at a time, many transactions are bundled into a record (block). After nodes reach agreement on a block, it is linked to the chain of previously approved blocks (ledger), thus extending a &lsquo;blockchain&rsquo;.</p>
+<p><img src="/hashing2.png" alt="hashing2" title="Chaining Blocks"> Credit voynich</p>
+<h3 id="block-headers">Block Headers</h3>
+<p>The image above depicts headers at the top of each block. Each header is an 80-byte chunk of data summarizing its respective block, which is allows nodes with less storage capacity (light nodes, link) to keep up with the network. Each header contains:</p>
+<ul>
+<li>A hash of the previous header</li>
+<li>A timestamp</li>
+<li>A mining difficulty value</li>
+<li>A proof of work nonce</li>
+<li>A root hash for the Merkle tree containing the transactions for that block.</li>
+</ul>
+<p>The mining difficulty value and proof of work nonce will make more sense after reading the next article.</p>
+<h3 id="merkling">Merkling</h3>
+<p>In order to efficiently bundle transactions into a block header, Bitcoin uses a data structure called a &lsquo;Merkle Tree&rsquo;.</p>
+<blockquote>
+<p><em>A Merkle tree, in the most general sense, is a way of hashing a large number of &ldquo;chunks&rdquo; of data together which relies on splitting the chunks into buckets, where each bucket contains only a few chunks, then taking the hash of each bucket and repeating the same process, continuing to do so until the total number of hashes remaining becomes only one: the root hash.</em>
+<br>
+<br>
+The root hash provides a simple way for light nodes to verify that a transaction is contained inside of a block - by requesting a merkle proof. This method is known as Simplified Payment Verification (SPV).
+<br>
+<br>
+<img src="/merkling.jpeg" alt="merkling" title="Merkling">
+Vitalik&rsquo;s elaboration here: <a href="https://blog.ethereum.org/2015/11/15/merkling-in-ethereum">https://blog.ethereum.org/2015/11/15/merkling-in-ethereum</a></p>
+</blockquote>
+<h3 id="state">State</h3>
+<p>A system is described as stateful if it is configured to remember preceding events or user interactions. In Bitcoin, state transitions occur when a block is added to the chain, and many account balances are updated. * collection of many state transitions This is where the term &lsquo;globally replicated state machine&rsquo; comes from: consensus on the entire state of the blockchain and validity of all of its transactions is distributed to thousands of nodes across the world that continually connect and disconnect from the network. This logic will be explored in the third article.</p>
+<h3 id="unspent-transaction-output-model-vs-account-model">Unspent Transaction Output Model vs. Account Model</h3>
+<p>There are different ways that the state of all accounts and balances can be stored. Bitcoin uses the Unspent Transaction Output (UTXO) model, where the entire graph of transaction outputs, spent and unspent, represents the global state. In the account model, only the current set of accounts and their balances represents the global state.</p>
+<p><img src="/utxo.jpeg" alt="utxo" title="UTXO"></p>
+<p><a href="https://www.horizen.io/academy/utxo-vs-account-model/">https://www.horizen.io/academy/utxo-vs-account-model/</a></p>
+<h3 id="blockchain-protocol-guarantees">Blockchain Protocol Guarantees</h3>
+<h4 id="consistency">Consistency</h4>
+<p>Consistency requires that all
+nodes have the same view of the linearly ordered log — but since their
+network speeds may differ, we shall allow some nodes’ logs to potentially
+grow a little faster than others.</p>
+<h4 id="liveness">Liveness</h4>
+<p>Liveness requires that if some honest node receives some
+transaction tx in some round r, then tx will appear in every honest node’s
+“finalized log” by the end of round r + Tconf where Tconf is often called the
+“confirmation time”.</p>
+<h4 id="immutability">Immutability</h4>
+<p>Immutability requires that once data is final, it is permanent and cannot be changed or removed.</p>
+<h4 id="censorship-resistance">Censorship Resistance</h4>
+<p>Censorship resistance requires that a minority of nodes cannot censor users or their transactions.</p>
+<h2 id="summary">Summary</h2>
+<p>Using a blockchain like Bitcoin, we can send money over the internet by trusting nodes in a distributed network instead of a financial intermediary.</p>
+
+
+	
+	<footer>
+		Website made by Prashanth Ramakrishna in 2023
+	</footer>
+
+
+</body>
+</html>

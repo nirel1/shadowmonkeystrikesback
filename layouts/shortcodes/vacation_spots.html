@@ -1,0 +1,19 @@
+<!--map element that holds the map-->
+<div id="map">
+
+<!--load stylesheet for leaflet for pins on map-->
+<link rel = "stylesheet" href =
+"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
+
+<!--leaflet javascript file-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+crossorigin=""></script>
+
+<!--list of markers from data file output as JSON array-->
+<script>
+	let markers = {{ $.Site.Data.vacation_spots }}; 
+</script>
+
+<!-- initialize map and add markers-->
+<script src = "/map.js"></script>
+</div>

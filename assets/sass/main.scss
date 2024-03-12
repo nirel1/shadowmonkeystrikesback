@@ -1,0 +1,115 @@
+// variables 
+$font-stack: Arial, sans-serif; 
+$primary-color: #fff; 
+$accent-color: #B8D989; 
+
+body {
+  width: 900px;
+  margin: 0 auto;
+  line-height: 1.5em; 
+  font-family: $font-stack;
+  background: $primary-color;
+}
+
+.katex { font-size: 1em; }
+
+.main {
+	width: 80%; 
+	margin: 0 auto; 
+}
+
+h1 {
+	line-height: 1.5em; 
+}
+
+img{
+	width: 100%;
+	height: auto;
+}
+
+nav ul {
+	margin: 0; 
+	list-style: none;
+	padding: 4px 5px;
+	background: #111;
+
+	a { 
+		color: #fff;
+		text-decoration: none;
+	
+	    &:hover {
+			text-decoration: underline;
+			color: $accent-color; 
+		}
+	}
+
+	li { 
+		display: inline; 
+	}
+}
+
+blockquote {
+	margin-left: 0em;
+	border-radius: 25px;
+	border-left: 5px rgb(25,25,112) solid;
+	border-right: 5px rgb(25, 25, 112) solid;
+	border-top: 5px rgb(25, 25, 112) solid;
+	border-bottom: 5px rgb(25, 25, 112) solid;
+	padding: 15px; 
+	background-color: rgb(232, 232, 232);
+  }
+
+aside {
+	width: 40%; 
+	padding-left: 0.5em; 
+	margin-left: 0.5rem; 
+	float: right; 
+	box-shadow: inset 5px 0 5px -5px #29627e; 
+	color: #29627e; 
+}
+
+aside > p {
+	margin: 0.5rem; 
+
+}
+
+th, td {
+	border: 1px solid;
+	padding: 8px; 
+}
+
+table {
+	border-collapse: collapse; 
+	width: 100%; 
+} 
+
+footer {
+	background: #f2f2f2;
+	padding: 2px 2px;
+	font-size: .7em;
+	text-align: center;
+}
+
+#map {
+	height: 300px;
+}
+
+img[alt=byzantine] { 
+	width: 30rem; 
+}
+
+img[alt=hashing] { 
+	width: 40rem; 
+}
+
+img[alt=hashing2] { 
+	width: 40rem; 
+}
+
+img[alt=merkling] { 
+	width: 40rem; 
+}
+
+img[alt=utxo] { 
+	width: 40rem; 
+}
