@@ -4,6 +4,18 @@ draft: false
 katex: true
 ---
 
+<br>
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <div style="border: 1px solid black; border-radius: 60%; overflow: hidden; width: 50%; height: 50%;">
+        <img src="/hanoman2.webp" style="width: 100%; height: auto;">
+    </div>
+</div>
+
+<br>
+
+
 My name is Prashanth. I'm a currently a graduate student at Carnegie Mellon University. My main interests revolve around cryptography. In particular,
 I have an affinity for post-quantum zero-knowledge proofs. I am additionally taken by cooperative game theory, network theory, and various niches of
 mathematical modeling. No matter how foolish, I enjoy mathematizing human processes -- trust in the case of cryptography, collaboration in the case of

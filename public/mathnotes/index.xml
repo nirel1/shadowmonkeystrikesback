@@ -7,33 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/mathnotes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Algebraic Facts</title>
-      <link>http://localhost:1313/mathnotes/algebraic_definitions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mathnotes/algebraic_definitions/</guid>
-      <description>Guide Definitions Def Group. A group is a set along with an associative (also sometimes called &amp;ldquo;binary&amp;rdquo;) operation. Usually, this operation is referred to as addition. Formally, a group is denoted $G = (G, +)$. $G$ contains an &amp;ldquo;identity&amp;rdquo; element, referred to as $0_{G}$. Finally, all elements of $G$ have inverses.&#xA;Def Ring. A ring is a set along with two operations, usually referred to as addition $(+)$ and multiplication $(\times)$.</description>
-    </item>
-    <item>
-      <title>Heterogeneous Utility Belt</title>
-      <link>http://localhost:1313/mathnotes/useful_thoerems/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mathnotes/useful_thoerems/</guid>
-      <description>Introduction Here is a collection of theorems and concepts that are useful. They will roughly be sorted by subject. I will attempt to give explanations or examples of why they are useful, at least in the contexts that I&amp;rsquo;ve encountered them. Some will be incredibly basic, while others will be slightly more invovled.&#xA;Number Theory Fermat&amp;rsquo;s Little Theorem. Let $p$ be a prime. Then $\forall a \in \mathbb{Z}$, $a^{p} \equiv a \pmod{p}$.</description>
-    </item>
-    <item>
-      <title>On Polynomials</title>
-      <link>http://localhost:1313/mathnotes/poly/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mathnotes/poly/</guid>
-      <description>What are Polynomials and Why are they Useful? Here we will usually on provide statements. Ocassionally, if I&amp;rsquo;m feeling inspired, I&amp;rsquo;ll give proofs as well. Polynomials are the bread and butter of modern proof systems.&#xA;Settings General Polynomial Objects Notation is important here. In particular, need to make sure number of variablesand degree have consistent variables. Then we need a way to refer to different descriptions of polynomial (evaluation vs coefficient form).</description>
-    </item>
-    <item>
-      <title>Paradoxes</title>
-      <link>http://localhost:1313/mathnotes/paradoxes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mathnotes/paradoxes/</guid>
-      <description> Richard-Berry Paradox: define a natural number as &amp;ldquo;the least natural number that cannot be described in fewer than twenty words&amp;rdquo;. If the number does exist, then we have just described it in thirteen words, contradicting its definitional statement. If such a number does not exist, then all natural number can be described in fewer than twenty words. </description>
-    </item>
   </channel>
 </rss>
